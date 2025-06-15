@@ -1,0 +1,9 @@
+# Solution 1 - Stack
+- The idea is to use stack to keep track of pairs of opening and closing brackets.
+- If we come across an opening bracket, we push it to the stack.
+- If we come across a closing bracket, we check the top of the stack. If the stack if empty we return False because closing bracket happened before an opening bracket violating balanced string condiditon. Or if top of the stack does not have opening bracket of same type, then also we return False. This is because either we have an overlapped bracket or closing bracket occured before an opening bracket, thus violating balanced string condition.
+- If the current char is a closing bracket and the top of the stack is the opening bracket of same type, we have found a pair and we pop the top of stack.
+- After we are done processing each bracket, if the stack is not empty, we return False. This will happen if we don't have equal number of closing and opening brackets in the string.
+
+# Time - O(n)
+# Space - O(n) [even if we empty the stack in the end, we are still using the space and have to account for it]
