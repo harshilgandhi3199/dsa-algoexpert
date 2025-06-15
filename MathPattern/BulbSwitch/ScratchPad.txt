@@ -1,0 +1,26 @@
+Each bulb is toggled in the following way:
+	•	Bulb i is toggled once for every divisor of i.
+
+Example:
+
+For bulb 6:
+	•	Toggled in round 1 (1 divides 6)
+	•	Round 2 (2 divides 6)
+	•	Round 3 (3 divides 6)
+	•	Round 6 (6 divides 6)
+→ total of 4 toggles
+
+So we can generalize:
+
+A bulb ends up ON if it is toggled an odd number of times.
+
+⸻
+
+🔍 Key Insight: When does a number have an odd number of divisors?
+	•	Usually, divisors come in pairs:
+e.g. 12 → (1,12), (2,6), (3,4) → even number of divisors;
+        Bulbs 1, 4, 9 will stay on because among 12 bulbs only these bulbs will be toggled n number of times
+	•	But for perfect squares, one of the divisors is repeated:
+e.g. 6 → Bulbs 1 and 4 will stay on
+
+✅ So: Only perfect squares have an odd number of divisors → Only perfect square bulbs stay ON.

@@ -1,0 +1,12 @@
+Solution 1 - Intuitive Solution
+* Breakdown the solution into 3 cases.
+* Case 1: If the lengths of both the strings are equal, then see if there are more than 1 differnce in character.
+            If the difference is more than 1, return False.
+* Case 2: If the difference in lengths of strings is more than 1, then both the strings cannot be made equal with only
+            one edit.
+* Case 3: In this case, you can either remove 1 char or add 1 char.
+            As you compare the characters, see if you have more than 1 difference of character. If yes, return False.
+            If you find the 1st difference, increment index of longer string, else increment index for both the strings.
+
+# Time - O(n), where n = length of shorter string.
+# Space - O(1)

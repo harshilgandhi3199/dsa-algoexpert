@@ -1,0 +1,13 @@
+# Solution 1
+- I was not aware that pop() and len() method runs in constant time.
+- Idea is the maintain 2 different stacks. Each time we push to the stack, if the number is less than global min, add the number to min stack. If the number is greater than global max and global min, push to the max stack.
+- This means that when we pop the stack, we will also remove corresponding number from min or max stack.
+- This approach works but there is lot of error handling. We need to look for edge cases and the code gets confusing.
+- I had look at the examples and change the code to solve the errors.
+
+# Solution 2 - fail proof
+- Instead of maintaining 2 different lists, just maintain a minMaxStack and add a dictionary of 2 keys: min and max, everytime we push to the stack.
+- When we push to the stack, calculate min and max based on the number and top of minMaxStack, and add to the minMaxStack.
+- When we pop, in addition to popping from the main stack, also pop from the minMaxStack. This way, we will always have a true copy of min and max at the top of minMaxStack.
+- For getMin and getMax, we can just return 'min' and 'max' key respectively from the top of the stack.
+- Len() and pop()[without index] methods run in constant time.
