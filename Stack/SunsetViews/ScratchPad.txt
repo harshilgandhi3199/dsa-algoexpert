@@ -1,0 +1,18 @@
+# Solution 1 - Non-stack solution
+- I originally came up with stack solution since I am solving from that category. But this can be solved without using stack concept as well.
+- The key is the start looking at the buildings from idx=0 and idx = len(buildings) based on the direction. If the direction is WEST, then start comparing building height with runningMaxHeight (initially 0). Add the idx to the output array if the current building height is greater than the runningMaxHeight. Update runningMaxHeight
+- If the direction is EAST, do the same operation but in reverse manner starting from end of the list of buildings.
+- Lastly, return the output array as is if the direction is WEST. If the direction is EAST, we need to reverse the output array.
+- The most efficient way is to use slicing like this [::-1] to return a copy of array but in reversed order. Better than using insert(0) method which runs in O(n) time.
+
+# Time - O(n)
+# Space - O(n)
+
+# Solution 2 - Stack solution
+- The idea is same here but instead of comparing the building height against the updating runningMaxHeight, compare the building height with the top of the stack.
+- I added a dictionary to the stack of type {'building', 'idx'}.
+- After all the buildings are parsed, pop the stack adding the indices to an output array.
+- If the direction is east, return a copy with reversed indices
+
+# Time - O(n)
+# Space - O(n)
